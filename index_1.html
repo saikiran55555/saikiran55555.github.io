@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avala Sai Kiran | Data Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0d0d14;--surface:#13131e;--card:#1a1a27;
+  --accent:#6c63ff;--green:#00c896;--gold:#f0b429;
+  --text:#e8e8f0;--muted:#7a7a9a;--border:#252535;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;font-size:15px;line-height:1.6}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(13,13,20,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.logo{font-weight:700;font-size:1rem;color:var(--text)}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:var(--text)}
+.hero{min-height:100vh;display:flex;align-items:center;padding:7rem 2rem 4rem;max-width:1100px;margin:0 auto;gap:4rem}
+.hero-text{flex:1}
+.open-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(0,200,150,0.08);border:1px solid rgba(0,200,150,0.2);color:var(--green);font-size:0.72rem;font-weight:600;padding:0.35rem 0.9rem;border-radius:100px;margin-bottom:1.5rem;letter-spacing:0.04em}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--green);animation:blink 1.4s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero h1{font-size:clamp(2.2rem,4.5vw,3.5rem);font-weight:700;line-height:1.15;margin-bottom:0.5rem;letter-spacing:-0.02em}
+.hero h1 .grad{background:linear-gradient(135deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-role{font-size:1rem;color:var(--muted);margin-bottom:1.25rem}
+.hero-desc{font-size:0.92rem;color:var(--muted);line-height:1.8;max-width:480px;margin-bottom:0.75rem}
+.hero-loc{font-size:0.82rem;color:var(--muted);margin-bottom:2rem}
+.hero-loc b{color:var(--green)}
+.btns{display:flex;gap:0.75rem;flex-wrap:wrap}
+.btn-p{background:var(--accent);color:#fff;padding:0.65rem 1.5rem;border-radius:7px;text-decoration:none;font-weight:600;font-size:0.85rem;transition:opacity 0.2s}
+.btn-p:hover{opacity:0.85}
+.btn-o{border:1px solid var(--border);color:var(--text);padding:0.65rem 1.5rem;border-radius:7px;text-decoration:none;font-weight:500;font-size:0.85rem;transition:all 0.2s}
+.btn-o:hover{border-color:var(--accent);color:var(--accent)}
+.btn-g{border:1px solid var(--green);color:var(--green);padding:0.65rem 1.5rem;border-radius:7px;text-decoration:none;font-weight:500;font-size:0.85rem;transition:all 0.2s}
+.btn-g:hover{background:var(--green);color:#000}
+.photo-wrap{position:relative;flex-shrink:0}
+.photo{width:280px;height:280px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--accent);box-shadow:0 0 60px rgba(108,99,255,0.2)}
+.rank-pill{position:absolute;bottom:10px;right:0;background:linear-gradient(135deg,var(--gold),#e67e00);color:#000;font-size:0.68rem;font-weight:700;padding:0.3rem 0.75rem;border-radius:100px;white-space:nowrap}
+.ach-row{max-width:1100px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem}
+.ach-box{background:rgba(240,180,41,0.05);border:1px solid rgba(240,180,41,0.15);border-radius:10px;padding:1rem;text-align:center}
+.ach-val{font-size:1.4rem;font-weight:700;color:var(--gold);margin-bottom:0.2rem}
+.ach-lbl{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em}
+.stats-bar{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2rem;margin-top:2.5rem}
+.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1.5rem;text-align:center}
+.s-num{font-size:1.8rem;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.s-lbl{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-top:0.15rem}
+section{padding:4.5rem 2rem}
+.wrap{max-width:1100px;margin:0 auto}
+.sec-tag{font-size:0.7rem;font-weight:600;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.5rem}
+.sec-title{font-size:clamp(1.5rem,2.5vw,2rem);font-weight:700;margin-bottom:0.75rem;letter-spacing:-0.01em}
+.sec-sub{color:var(--muted);font-size:0.88rem;line-height:1.8;max-width:540px;margin-bottom:2.5rem}
+.sk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.sk-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.25rem;transition:border-color 0.2s}
+.sk-card:hover{border-color:var(--accent)}
+.sk-icon{font-size:1.4rem;margin-bottom:0.6rem}
+.sk-card h3{font-size:0.88rem;font-weight:600;margin-bottom:0.6rem}
+.tags{display:flex;flex-wrap:wrap;gap:0.35rem}
+.tg{background:rgba(108,99,255,0.07);border:1px solid rgba(108,99,255,0.15);color:#a09aff;font-size:0.7rem;padding:0.2rem 0.55rem;border-radius:100px}
+.proj-grid{display:grid;gap:1.5rem}
+.proj-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:grid;grid-template-columns:1.1fr 1fr;transition:border-color 0.2s,transform 0.2s}
+.proj-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.proj-card.rev{grid-template-columns:1fr 1.1fr}
+.proj-card.rev .pimg{order:2}
+.proj-card.rev .pdet{order:1}
+.proj-card.featured{border-color:rgba(0,200,150,0.3);background:linear-gradient(135deg,rgba(0,200,150,0.03),var(--card))}
+.proj-card.featured:hover{border-color:var(--green)}
+.pimg{overflow:hidden}
+.pimg img{width:100%;height:100%;object-fit:cover;min-height:260px;transition:transform 0.4s}
+.proj-card:hover .pimg img{transform:scale(1.03)}
+.pdet{padding:1.75rem;display:flex;flex-direction:column;justify-content:center;gap:0.55rem}
+.pdomain{font-size:0.68rem;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:0.08em}
+.pdet h3{font-size:1.1rem;font-weight:700;line-height:1.3}
+.pdet p{color:var(--muted);font-size:0.84rem;line-height:1.75}
+.p-metrics{display:flex;flex-wrap:wrap;gap:0.35rem}
+.pm{background:rgba(0,200,150,0.07);border:1px solid rgba(0,200,150,0.15);color:var(--green);font-size:0.68rem;padding:0.2rem 0.55rem;border-radius:100px;font-weight:600}
+.pm.gold{background:rgba(240,180,41,0.07);border-color:rgba(240,180,41,0.25);color:var(--gold)}
+.p-tools{display:flex;flex-wrap:wrap;gap:0.3rem}
+.pt{background:rgba(255,255,255,0.03);border:1px solid var(--border);color:var(--muted);font-size:0.68rem;padding:0.2rem 0.55rem;border-radius:5px}
+.btn-gh{display:inline-flex;align-items:center;gap:0.35rem;background:var(--accent);color:#fff;padding:0.5rem 1.1rem;border-radius:6px;text-decoration:none;font-size:0.78rem;font-weight:600;transition:opacity 0.2s;width:fit-content;margin-top:0.25rem}
+.btn-gh:hover{opacity:0.85}
+.btn-gh.green{background:var(--green);color:#000}
+.new-badge{display:inline-flex;align-items:center;gap:0.3rem;background:rgba(0,200,150,0.1);border:1px solid rgba(0,200,150,0.3);color:var(--green);font-size:0.65rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:100px;margin-bottom:0.25rem;letter-spacing:0.05em}
+.exp-card{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:2rem}
+.exp-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;flex-wrap:wrap;gap:0.75rem}
+.exp-title{font-size:1.05rem;font-weight:700}
+.exp-co{color:var(--accent);font-size:0.88rem;font-weight:500;margin-top:0.2rem}
+.exp-date{color:var(--muted);font-size:0.78rem;margin-top:0.15rem}
+.exp-pill{background:rgba(0,200,150,0.08);border:1px solid rgba(0,200,150,0.2);color:var(--green);font-size:0.72rem;padding:0.35rem 0.9rem;border-radius:100px;font-weight:600;white-space:nowrap;align-self:flex-start}
+.exp-ul{list-style:none;display:grid;gap:0.7rem}
+.exp-ul li{color:var(--muted);font-size:0.85rem;line-height:1.7;padding-left:1.25rem;position:relative}
+.exp-ul li::before{content:'›';position:absolute;left:0;color:var(--accent);font-weight:700}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+.cert-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:all 0.2s;cursor:pointer}
+.cert-card:hover{transform:translateY(-3px)}
+.cert-card.gold{border-color:rgba(240,180,41,0.25)}
+.cert-card.gold:hover{border-color:var(--gold)}
+.cert-card.purple{border-color:rgba(108,99,255,0.2)}
+.cert-card.purple:hover{border-color:var(--accent)}
+.cert-card.teal{border-color:rgba(0,200,150,0.2)}
+.cert-card.teal:hover{border-color:var(--green)}
+.cert-top{display:flex;align-items:center;gap:0.85rem;margin-bottom:0.85rem}
+.cert-ic{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.ic-gold{background:linear-gradient(135deg,var(--gold),#e67e00)}
+.ic-purple{background:linear-gradient(135deg,var(--accent),#9c4dff)}
+.ic-teal{background:linear-gradient(135deg,var(--green),#00b4d8)}
+.ic-blue{background:linear-gradient(135deg,#0077ff,#00c6ff)}
+.ic-green{background:linear-gradient(135deg,#00c896,#00b4d8)}
+.cert-name{font-size:0.9rem;font-weight:600;line-height:1.3;margin-bottom:0.15rem}
+.cert-iss{color:var(--muted);font-size:0.75rem}
+.cert-meta{display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.6rem}
+.cert-badge{font-size:0.68rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:100px}
+.badge-gold{background:rgba(240,180,41,0.1);border:1px solid rgba(240,180,41,0.25);color:var(--gold)}
+.badge-purple{background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.25);color:var(--accent)}
+.badge-green{background:rgba(0,200,150,0.1);border:1px solid rgba(0,200,150,0.25);color:var(--green)}
+.cert-date{color:var(--muted);font-size:0.75rem}
+.cert-id{font-family:monospace;font-size:0.7rem;color:var(--muted);background:rgba(255,255,255,0.02);border:1px solid var(--border);padding:0.25rem 0.5rem;border-radius:4px;word-break:break-all}
+.view-cert-btn{display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.75rem;font-size:0.75rem;color:var(--accent);font-weight:500;cursor:pointer;background:none;border:none;padding:0;text-decoration:underline;text-underline-offset:2px}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:1000;align-items:center;justify-content:center;padding:1rem}
+.modal-overlay.active{display:flex}
+.modal-box{background:var(--card);border:1px solid var(--border);border-radius:14px;max-width:700px;width:100%;max-height:90vh;overflow-y:auto;position:relative}
+.modal-header{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.25rem;border-bottom:1px solid var(--border)}
+.modal-title{font-size:0.9rem;font-weight:600}
+.modal-close{background:none;border:none;color:var(--muted);cursor:pointer;font-size:1.4rem;line-height:1;padding:0.25rem}
+.modal-close:hover{color:var(--text)}
+.modal-img{width:100%;display:block}
+.modal-body{padding:1rem 1.25rem}
+.modal-score-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;text-align:center;margin-top:0.75rem}
+.ms-val{font-size:1.2rem;font-weight:700;color:var(--gold)}
+.ms-lbl{font-size:0.7rem;color:var(--muted);text-transform:uppercase}
+.contact-sec{background:var(--surface);border-top:1px solid var(--border)}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem}
+.cc{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.25rem;text-align:center;text-decoration:none;color:var(--text);transition:all 0.2s}
+.cc:hover{border-color:var(--accent);transform:translateY(-3px)}
+.cc-icon{font-size:1.5rem;margin-bottom:0.5rem}
+.cc-lbl{color:var(--muted);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.25rem}
+.cc-val{font-weight:500;font-size:0.82rem;word-break:break-all}
+footer{text-align:center;padding:1.5rem;color:var(--muted);font-size:0.78rem;border-top:1px solid var(--border)}
+/* Bluestock project no-image style */
+.pimg-placeholder{background:linear-gradient(135deg,rgba(0,200,150,0.08),rgba(108,99,255,0.08));display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:260px;gap:1rem;padding:2rem}
+.pimg-placeholder .big-icon{font-size:3.5rem}
+.pimg-placeholder .pimg-stats{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;width:100%}
+.pimg-placeholder .ps{background:rgba(0,0,0,0.2);border:1px solid rgba(0,200,150,0.15);border-radius:8px;padding:0.6rem;text-align:center}
+.pimg-placeholder .ps-val{font-size:1rem;font-weight:700;color:var(--green)}
+.pimg-placeholder .ps-lbl{font-size:0.62rem;color:var(--muted);text-transform:uppercase}
+@media(max-width:768px){
+  .hero{flex-direction:column-reverse;text-align:center;padding-top:6.5rem;gap:2rem}
+  .photo{width:180px;height:180px}
+  .btns{justify-content:center}
+  .hero-desc{max-width:100%}
+  .proj-card,.proj-card.rev{grid-template-columns:1fr}
+  .proj-card.rev .pimg,.proj-card.rev .pdet{order:unset}
+  .pimg img{min-height:200px}
+  .exp-head{flex-direction:column}
+  .nav-links{gap:0.9rem}
+  .ach-row{padding:0 1rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Avala <span>Sai Kiran</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="about">
+  <div class="hero-text">
+    <div class="open-badge"><span class="dot"></span> Open to Work · Available Immediately</div>
+    <h1>Avala<br><span class="grad">Sai Kiran</span></h1>
+    <div class="hero-role">Data Analyst &nbsp;·&nbsp; Power BI Developer &nbsp;·&nbsp; Dashboard Specialist</div>
+    <p class="hero-desc">Transforming raw business data into actionable insights. 9+ months of hands-on experience across food delivery, aviation, hospitality and fintech domains. NASSCOM Gold Certified by Govt. of India.</p>
+    <p class="hero-loc">📍 Bengaluru, India &nbsp;·&nbsp; <b>Open to Relocation Anywhere in India</b></p>
+    <div class="btns">
+      <a href="https://linkedin.com/in/avalasaikiran" target="_blank" class="btn-p">💼 LinkedIn</a>
+      <a href="https://github.com/saikiran55555" target="_blank" class="btn-o">💻 GitHub</a>
+      <a href="Avala_Sai_Kiran_Resume.pdf" download class="btn-g">📄 Download Resume</a>
+    </div>
+  </div>
+  <div class="photo-wrap">
+    <img src="sai photo1.jpeg" alt="Avala Sai Kiran" class="photo">
+    <div class="rank-pill">🥇 #1 of 19,242 Candidates</div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<div class="ach-row">
+  <div class="ach-box"><div class="ach-val">100/100</div><div class="ach-lbl">Assessment Score</div></div>
+  <div class="ach-box"><div class="ach-val">#1 Rank</div><div class="ach-lbl">of 19,242 Candidates</div></div>
+  <div class="ach-box"><div class="ach-val">GOLD 🥇</div><div class="ach-lbl">NASSCOM Category</div></div>
+  <div class="ach-box"><div class="ach-val">Govt. of India</div><div class="ach-lbl">MeitY Backed Cert</div></div>
+  <div class="ach-box"><div class="ach-val">Grade A+</div><div class="ach-lbl">Zero Wrong Answers</div></div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div><div class="s-num">9+</div><div class="s-lbl">Months Experience</div></div>
+    <div><div class="s-num">20+</div><div class="s-lbl">Dashboards Built</div></div>
+    <div><div class="s-num">4</div><div class="s-lbl">Industry Domains</div></div>
+    <div><div class="s-num">87K+</div><div class="s-lbl">Records Analyzed</div></div>
+    <div><div class="s-num">30%</div><div class="s-lbl">Reporting Automated</div></div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-tag">What I Work With</div>
+    <h2 class="sec-title">Technical Skills</h2>
+    <p class="sec-sub">A complete data analytics toolkit — from raw SQL queries to polished Power BI dashboards.</p>
+    <div class="sk-grid">
+      <div class="sk-card"><div class="sk-icon">📊</div><h3>Business Intelligence</h3><div class="tags"><span class="tg">Power BI</span><span class="tg">DAX</span><span class="tg">Power Query</span><span class="tg">Tableau</span><span class="tg">LODs</span></div></div>
+      <div class="sk-card"><div class="sk-icon">🗄️</div><h3>Data & Databases</h3><div class="tags"><span class="tg">SQL</span><span class="tg">SQLite</span><span class="tg">Joins</span><span class="tg">Window Functions</span><span class="tg">Data Modelling</span></div></div>
+      <div class="sk-card"><div class="sk-icon">📈</div><h3>Excel & Spreadsheets</h3><div class="tags"><span class="tg">Advanced Excel</span><span class="tg">Pivot Tables</span><span class="tg">Power Pivot</span><span class="tg">VLOOKUP</span></div></div>
+      <div class="sk-card"><div class="sk-icon">🐍</div><h3>Python & ETL</h3><div class="tags"><span class="tg">Python</span><span class="tg">Pandas</span><span class="tg">NumPy</span><span class="tg">Matplotlib</span><span class="tg">ETL Pipeline</span></div></div>
+      <div class="sk-card"><div class="sk-icon">🧠</div><h3>Analytics & Reporting</h3><div class="tags"><span class="tg">KPI Design</span><span class="tg">MIS Reporting</span><span class="tg">Sharpe Ratio</span><span class="tg">VaR</span><span class="tg">HHI Analysis</span></div></div>
+      <div class="sk-card"><div class="sk-icon">🤖</div><h3>AI Tools</h3><div class="tags"><span class="tg">ChatGPT</span><span class="tg">Claude</span><span class="tg">Google Gemini</span><span class="tg">Microsoft Copilot</span><span class="tg">Prompt Engineering</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="background:var(--surface)">
+  <div class="wrap">
+    <div class="sec-tag">My Work</div>
+    <h2 class="sec-title">Featured Projects</h2>
+    <p class="sec-sub">Real-world dashboards and analytics platforms built with production-level data.</p>
+    <div class="proj-grid">
+
+      <!-- BLUESTOCK - NEW PROJECT -->
+      <div class="proj-card featured">
+        <div class="pimg">
+          <div class="pimg-placeholder">
+            <div class="big-icon">📈</div>
+            <div class="pimg-stats">
+              <div class="ps"><div class="ps-val">87K+</div><div class="ps-lbl">Rows</div></div>
+              <div class="ps"><div class="ps-val">40</div><div class="ps-lbl">Funds</div></div>
+              <div class="ps"><div class="ps-val">₹81L Cr</div><div class="ps-lbl">Industry AUM</div></div>
+              <div class="ps"><div class="ps-val">761</div><div class="ps-lbl">At-Risk Investors</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="pdet">
+          <div class="new-badge">🆕 Latest Project · June 2026</div>
+          <div class="pdomain">💹 Fintech · Mutual Fund Analytics</div>
+          <h3>Bluestock Fintech — Mutual Fund Analytics Platform</h3>
+          <p>End-to-end Mutual Fund Analytics Platform analyzing India's ₹81 Lakh Crore MF industry. Built ETL pipeline in Python, SQLite star schema database, computed risk metrics for 40 funds and built interactive 4-page Power BI dashboard.</p>
+          <div class="p-metrics">
+            <span class="pm">87,533 Rows</span>
+            <span class="pm">40 Funds</span>
+            <span class="pm gold">Bluestock Fintech</span>
+            <span class="pm">4-Page Dashboard</span>
+          </div>
+          <div class="p-tools">
+            <span class="pt">Python</span>
+            <span class="pt">Pandas</span>
+            <span class="pt">SQL</span>
+            <span class="pt">SQLite</span>
+            <span class="pt">Power BI</span>
+            <span class="pt">ETL Pipeline</span>
+            <span class="pt">Sharpe Ratio</span>
+            <span class="pt">VaR</span>
+            <span class="pt">HHI</span>
+          </div>
+          <a href="https://github.com/saikiran55555/Bluestock-Mutual-Fund-Analytics" target="_blank" class="btn-gh green">View on GitHub →</a>
+        </div>
+      </div>
+
+      <!-- ZOMATO -->
+      <div class="proj-card rev">
+        <div class="pimg"><img src="Screenshot 2026-05-13 135339.png" alt="Zomato Dashboard" loading="lazy"></div>
+        <div class="pdet">
+          <div class="pdomain">🍕 Food Delivery Analytics</div>
+          <h3>Zomato Analytics Dashboard</h3>
+          <p>Multi-page Power BI report tracking 9,500+ restaurants across 10 countries with dynamic filters and drill-down features.</p>
+          <div class="p-metrics"><span class="pm">9.55K Restaurants</span><span class="pm">10 Countries</span><span class="pm">15% Retention Boost</span></div>
+          <div class="p-tools"><span class="pt">Power BI</span><span class="pt">SQL</span><span class="pt">DAX</span><span class="pt">Power Query</span></div>
+          <a href="https://github.com/saikiran55555/Zomato-Analytics-Dashboard" target="_blank" class="btn-gh">View on GitHub →</a>
+        </div>
+      </div>
+
+      <!-- AIRLINES -->
+      <div class="proj-card">
+        <div class="pimg"><img src="Screenshot 2026-05-21 012337.png" alt="Airlines Dashboard" loading="lazy"></div>
+        <div class="pdet">
+          <div class="pdomain">✈️ Aviation Analytics</div>
+          <h3>High Cloud Airlines Dashboard</h3>
+          <p>Analyzed 100,000+ flight records for seasonal demand trends. Tracked Load Factor KPI, route performance and revenue per seat.</p>
+          <div class="p-metrics"><span class="pm">100K+ Records</span><span class="pm">76.80% Load Factor</span><span class="pm">~10% Cost Savings</span></div>
+          <div class="p-tools"><span class="pt">Tableau</span><span class="pt">Excel</span><span class="pt">Load Factor KPI</span></div>
+          <a href="https://github.com/saikiran55555/High-Cloud-Airlines-Data-Analyst-" target="_blank" class="btn-gh">View on GitHub →</a>
+        </div>
+      </div>
+
+      <!-- HOSPITALITY -->
+      <div class="proj-card rev">
+        <div class="pimg"><img src="Screenshot 2026-05-15 094010.png" alt="Hospitality Dashboard" loading="lazy"></div>
+        <div class="pdet">
+          <div class="pdomain">🏨 Hospitality Analytics</div>
+          <h3>Hospitality Data Dashboard</h3>
+          <p>Multi-property revenue and occupancy tracking across 4 major Indian cities. Monitored 135K bookings and room class performance.</p>
+          <div class="p-metrics"><span class="pm">₹1,708 Cr Revenue</span><span class="pm">135K Bookings</span><span class="pm">57.87% Occupancy</span></div>
+          <div class="p-tools"><span class="pt">Power BI</span><span class="pt">SQL</span><span class="pt">Excel</span><span class="pt">Power Query</span></div>
+          <a href="https://github.com/saikiran55555/Hospitality-Data-Analyst-" target="_blank" class="btn-gh">View on GitHub →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-tag">My Journey</div>
+    <h2 class="sec-title">Work Experience</h2>
+    <p class="sec-sub">9 months of certified real-world data analytics internship.</p>
+    <div class="exp-card">
+      <div class="exp-head">
+        <div>
+          <div class="exp-title">Data Analyst Intern</div>
+          <div class="exp-co">AIVariant · Hyderabad, India</div>
+          <div class="exp-date">02 Aug 2025 – 04 May 2026 · Cert: AIV/25-26/Q2/05/17190</div>
+        </div>
+        <div class="exp-pill">✅ 9 Months Certified</div>
+      </div>
+      <ul class="exp-ul">
+        <li>Analyzed business and sales datasets using SQL and Power BI, generating actionable KPI insights across multiple client projects</li>
+        <li>Designed and deployed 20+ interactive dashboards tracking revenue, performance and operational trends</li>
+        <li>Automated recurring reporting workflows using Excel and Power BI, reducing manual effort by ~30%</li>
+        <li>Performed data cleaning, transformation and validation improving data accuracy significantly</li>
+        <li>Conducted HR analytics covering employee performance, attrition trends and recruitment pipeline insights</li>
+        <li>Collaborated cross-functionally presenting complex datasets to both technical and non-technical stakeholders</li>
+      </ul>
+    </div>
+    <br>
+    <div class="exp-card" style="border-left-color:var(--green);margin-top:1rem">
+      <div class="exp-head">
+        <div>
+          <div class="exp-title">Data Analyst Intern — Capstone Project</div>
+          <div class="exp-co" style="color:var(--green)">Bluestock Fintech · Remote, India</div>
+          <div class="exp-date">June 2026 · Mutual Fund Analytics Platform</div>
+        </div>
+        <div class="exp-pill" style="background:rgba(0,200,150,0.08);border-color:rgba(0,200,150,0.2)">🆕 June 2026</div>
+      </div>
+      <ul class="exp-ul">
+        <li>Built end-to-end ETL pipeline in Python processing 87,533 rows across 10 AMFI datasets from mfapi.in</li>
+        <li>Designed 5-table SQLite star schema database and wrote 10 analytical SQL queries</li>
+        <li>Computed risk-adjusted performance metrics — Sharpe Ratio, CAGR, Alpha, Beta, Max Drawdown for 40 funds</li>
+        <li>Built 4-page interactive Power BI dashboard — Industry Overview, Fund Performance, Investor Analytics, SIP Trends</li>
+        <li>Computed VaR (95%), CVaR and HHI Sector Concentration Risk — identified Axis Bluechip as highest risk fund (HHI: 2,967)</li>
+        <li>Flagged 761 at-risk investors through SIP gap analysis using Pandas date-difference calculations</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" style="background:var(--surface)">
+  <div class="wrap">
+    <div class="sec-tag">Credentials</div>
+    <h2 class="sec-title">Certifications</h2>
+    <p class="sec-sub">Government-backed and industry-recognized credentials. Click any certificate to view it.</p>
+    <div class="cert-grid">
+
+      <div class="cert-card gold" onclick="openModal('nasscom')">
+        <div class="cert-top">
+          <div class="cert-ic ic-gold">🏆</div>
+          <div>
+            <div class="cert-name">NASSCOM Certificate Program in Data Analyst</div>
+            <div class="cert-iss">FutureSkills Prime · Ministry of Electronics & IT, Govt. of India</div>
+          </div>
+        </div>
+        <div class="cert-meta">
+          <span class="cert-badge badge-gold">🥇 GOLD Category</span>
+          <span class="cert-date">10 March 2026</span>
+        </div>
+        <div class="cert-id">ID: FSP/2026/3/10260887</div>
+        <button class="view-cert-btn">👁 View Certificate</button>
+      </div>
+
+      <div class="cert-card purple" onclick="openModal('assessment')">
+        <div class="cert-top">
+          <div class="cert-ic ic-purple">🎯</div>
+          <div>
+            <div class="cert-name">Data Analytics Assessment</div>
+            <div class="cert-iss">Cloud Exam · NASSCOM Aligned</div>
+          </div>
+        </div>
+        <div class="cert-meta">
+          <span class="cert-badge badge-purple">Grade A+ Outstanding</span>
+        </div>
+        <div class="cert-id">Score: 100/100 · Rank #1 of 19,242 · 0 Wrong Answers</div>
+        <button class="view-cert-btn">👁 View Score</button>
+      </div>
+
+      <div class="cert-card teal" onclick="openModal('bluestock')">
+        <div class="cert-top">
+          <div class="cert-ic ic-green">💹</div>
+          <div>
+            <div class="cert-name">Mutual Fund Analytics — Capstone Project</div>
+            <div class="cert-iss">Bluestock Fintech · Data & Analytics Division</div>
+          </div>
+        </div>
+        <div class="cert-meta">
+          <span class="cert-badge badge-green">🆕 June 2026</span>
+        </div>
+        <div class="cert-id">Project: End-to-End ETL + Power BI Dashboard · 87,533 Rows · 40 Funds</div>
+        <button class="view-cert-btn">👁 View Project</button>
+      </div>
+
+      <div class="cert-card teal" onclick="openModal('intern')">
+        <div class="cert-top">
+          <div class="cert-ic ic-teal">📜</div>
+          <div>
+            <div class="cert-name">Data Analyst Internship Certificate</div>
+            <div class="cert-iss">AIVariant · Program Director Certified</div>
+          </div>
+        </div>
+        <div class="cert-meta">
+          <span class="cert-date" style="color:var(--green);font-weight:600">02 Aug 2025 – 04 May 2026</span>
+        </div>
+        <div class="cert-id">Code: AIV/25-26/Q2/05/17190</div>
+        <button class="view-cert-btn">👁 View Certificate</button>
+      </div>
+
+      <div class="cert-card" style="border-color:rgba(255,140,0,0.25)" onclick="openModal('excelr')">
+        <div class="cert-top">
+          <div class="cert-ic" style="background:linear-gradient(135deg,#ff6b35,#f7931e)">🏅</div>
+          <div>
+            <div class="cert-name">Certificate of Excellence — Data Analyst Programme</div>
+            <div class="cert-iss">ExcelR Solutions · Bengaluru · Director Certified</div>
+          </div>
+        </div>
+        <div class="cert-meta">
+          <span class="cert-badge" style="background:rgba(255,140,0,0.1);border:1px solid rgba(255,140,0,0.3);color:#ff9500">⭐ Outstanding Performance</span>
+        </div>
+        <div class="cert-id">ID: 32313/EXCELR/2972025 · Completed: 29th July 2025</div>
+        <button class="view-cert-btn">👁 View Certificate</button>
+      </div>
+
+      <div class="cert-card" style="border-color:rgba(0,119,255,0.15)">
+        <div class="cert-top">
+          <div class="cert-ic ic-blue">🎓</div>
+          <div>
+            <div class="cert-name">B.Tech – Civil Engineering</div>
+            <div class="cert-iss">Aditya College of Engineering, Andhra Pradesh</div>
+          </div>
+        </div>
+        <div class="cert-meta"><span class="cert-date">Graduated 2022 · GPA 7.25/10</span></div>
+        <div class="cert-id">Self-upskilled in Data Analytics 2022–2025</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="modal-nasscom" onclick="closeOnBg(event,'nasscom')">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title">🏆 NASSCOM Certificate — GOLD Category</div>
+      <button class="modal-close" onclick="closeModal('nasscom')">×</button>
+    </div>
+    <img src="nasscom_cert.png" alt="NASSCOM Certificate" class="modal-img">
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-assessment" onclick="closeOnBg(event,'assessment')">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title">🎯 Data Analytics Assessment — 100/100</div>
+      <button class="modal-close" onclick="closeModal('assessment')">×</button>
+    </div>
+    <img src="Screenshot 2026-05-22 123138.png" alt="Assessment Score" class="modal-img">
+    <div class="modal-body">
+      <div class="modal-score-grid">
+        <div><div class="ms-val">100/100</div><div class="ms-lbl">Score</div></div>
+        <div><div class="ms-val">#1</div><div class="ms-lbl">of 19,242</div></div>
+        <div><div class="ms-val">A+</div><div class="ms-lbl">Grade</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-bluestock" onclick="closeOnBg(event,'bluestock')">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title">💹 Bluestock Fintech — Mutual Fund Analytics Capstone</div>
+      <button class="modal-close" onclick="closeModal('bluestock')">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-score-grid">
+        <div><div class="ms-val">87,533</div><div class="ms-lbl">Rows Analyzed</div></div>
+        <div><div class="ms-val">40</div><div class="ms-lbl">Funds Tracked</div></div>
+        <div><div class="ms-val">761</div><div class="ms-lbl">At-Risk Investors</div></div>
+      </div>
+      <div style="margin-top:1.25rem;display:grid;gap:0.6rem">
+        <div style="background:rgba(0,200,150,0.05);border:1px solid rgba(0,200,150,0.15);border-radius:8px;padding:0.75rem;font-size:0.82rem;color:var(--muted)">✅ Built ETL pipeline in Python — loaded & cleaned 10 AMFI datasets</div>
+        <div style="background:rgba(0,200,150,0.05);border:1px solid rgba(0,200,150,0.15);border-radius:8px;padding:0.75rem;font-size:0.82rem;color:var(--muted)">✅ Designed 5-table SQLite star schema database</div>
+        <div style="background:rgba(0,200,150,0.05);border:1px solid rgba(0,200,150,0.15);border-radius:8px;padding:0.75rem;font-size:0.82rem;color:var(--muted)">✅ Computed Sharpe, CAGR, Alpha, Beta, Max Drawdown, VaR for 40 funds</div>
+        <div style="background:rgba(0,200,150,0.05);border:1px solid rgba(0,200,150,0.15);border-radius:8px;padding:0.75rem;font-size:0.82rem;color:var(--muted)">✅ Built 4-page interactive Power BI dashboard with slicers & drill-through</div>
+        <div style="background:rgba(0,200,150,0.05);border:1px solid rgba(0,200,150,0.15);border-radius:8px;padding:0.75rem;font-size:0.82rem;color:var(--muted)">✅ Identified 761 at-risk investors via SIP gap analysis</div>
+      </div>
+      <div style="margin-top:1rem;text-align:center">
+        <a href="https://github.com/saikiran55555/Bluestock-Mutual-Fund-Analytics" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;background:var(--green);color:#000;padding:0.6rem 1.4rem;border-radius:7px;text-decoration:none;font-weight:600;font-size:0.85rem">View on GitHub →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-intern" onclick="closeOnBg(event,'intern')">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title">📜 AIVariant Internship Certificate</div>
+      <button class="modal-close" onclick="closeModal('intern')">×</button>
+    </div>
+    <img src="intern_cert.png" alt="Internship Certificate" class="modal-img">
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-excelr" onclick="closeOnBg(event,'excelr')">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div class="modal-title">🏅 ExcelR Certificate of Excellence — Data Analyst</div>
+      <button class="modal-close" onclick="closeModal('excelr')">×</button>
+    </div>
+    <img src="excelr_cert.png" alt="ExcelR Certificate" class="modal-img">
+    <div class="modal-body">
+      <div class="modal-score-grid">
+        <div><div class="ms-val">July 2025</div><div class="ms-lbl">Completed</div></div>
+        <div><div class="ms-val">Excellence</div><div class="ms-lbl">Grade</div></div>
+        <div><div class="ms-val">ExcelR</div><div class="ms-lbl">Issuer</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-sec" id="contact">
+  <div class="wrap">
+    <div class="sec-tag">Get In Touch</div>
+    <h2 class="sec-title">Contact Me</h2>
+    <p class="sec-sub">Open to Data Analyst, Power BI Developer, MIS Analyst roles. Available immediately. Willing to relocate anywhere in India.</p>
+    <div class="contact-grid">
+      <a href="mailto:princesai2734@gmail.com" class="cc"><div class="cc-icon">📧</div><div class="cc-lbl">Email</div><div class="cc-val">princesai2734@gmail.com</div></a>
+      <a href="tel:+918328017784" class="cc"><div class="cc-icon">📞</div><div class="cc-lbl">Phone</div><div class="cc-val">+91 8328017784</div></a>
+      <a href="https://linkedin.com/in/avalasaikiran" target="_blank" class="cc"><div class="cc-icon">💼</div><div class="cc-lbl">LinkedIn</div><div class="cc-val">linkedin.com/in/avalasaikiran</div></a>
+      <a href="https://github.com/saikiran55555" target="_blank" class="cc"><div class="cc-icon">💻</div><div class="cc-lbl">GitHub</div><div class="cc-val">github.com/saikiran55555</div></a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Avala Sai Kiran · Data Analyst · Bengaluru · 🥇 #1 of 19,242 · NASSCOM Gold Certified · Bluestock Fintech Intern</footer>
+
+<script>
+function openModal(id){document.getElementById('modal-'+id).classList.add('active');document.body.style.overflow='hidden'}
+function closeModal(id){document.getElementById('modal-'+id).classList.remove('active');document.body.style.overflow=''}
+function closeOnBg(e,id){if(e.target===document.getElementById('modal-'+id))closeModal(id)}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal-overlay.active').forEach(m=>m.classList.remove('active'))});
+</script>
+</body>
+</html>
